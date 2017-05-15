@@ -149,3 +149,44 @@ void greet(void)
     printf("WELCOME TO GAME OF FIFTEEN\n");
     usleep(2000000);
 }
+/**
+ * Initializes the game's board with tiles numbered 1 through d*d - 1
+ * (i.e., fills 2D array with values but does not actually print them).
+ */
+void init(void)
+{
+
+    int var = dimen * dimen - 1 ;
+    for(int i = 0; i < dimen ; i++)
+    {
+        for(int j = 0;j < dimen ;j++)
+        {
+            board[i][j] = var;
+            var--;
+        }
+    }
+    if ( dimen % 2 == 0)
+    {
+        int t = board[dimen - 1][dimen - 2];
+        board[dimen - 1][dimen - 2] = board[dimen - 1][dimen - 3];
+        board[dimen - 1][dimen - 3] = t;
+    }
+
+}
+
+/**
+ * Prints the board in its current state.
+ */
+void draw(void)
+{
+    // printing the values of the board elements
+    for( int i = 0 ; i < dimen ; i++)
+    {
+        for( int j = 0; j < dimen ; j++)
+        {
+            printf(" %2d ",board[i][j]);
+        }
+        printf("\n");
+    }
+}
+
