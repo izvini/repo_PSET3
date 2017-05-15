@@ -189,4 +189,55 @@ void draw(void)
         printf("\n");
     }
 }
+/**
+ * If tile borders empty space, moves tile and returns true, else
+ * returns false.
+ */
+bool move(int tile)
+{
 
+    int x = 0, y = 0, atile = 0, btile = 0;
+    for(int i = 0 ; i < dimen ; i++)
+    {
+        for(int j = 0; j < dimen; j++)
+        {
+            if (board[i][j] == 0)
+            {
+                x = i;
+                y = j;
+            }
+
+        }
+    }
+    for(int i = 0 ; i < dimen ; i++)
+    {
+        for(int j = 0; j < dimen; j++)
+        {
+            if (board[i][j] == tile)
+            {
+                atile = i;
+                btile = j;
+            }
+        }
+    }
+    // checking for the validity of tile's move
+    if (btile == y && (atile == x - 1 || atile == x + 1 ))
+    {
+        int t = board[x][y];
+        board[x][y] = board[atile][btile];
+        board[atile][btile] = t;
+        return true;
+    }
+    else if(atile == x && (btile == y - 1 || btile == y + 1))
+    {
+        int t = board[x][y];
+        board[x][y] = board[atile][btile];
+        board[atile][btile] = t;
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+}
