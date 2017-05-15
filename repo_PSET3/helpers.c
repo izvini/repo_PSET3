@@ -6,7 +6,7 @@
  *
  * Helper functions for Problem Set 3.
  */
-       
+
 #include <cs50.h>
 #include <stdio.h>
 #include "helpers.h"
@@ -21,7 +21,7 @@ bool search(int value, int values[], int n)
         int f = 0;
         int l = n ;
         int m = (int)(f + l)/2;
-    
+
         while(f <= l)
         {
             m = (int)(f + l)/2;
@@ -40,26 +40,4 @@ bool search(int value, int values[], int n)
         }
     }
     return false;
-}
-/**
- * Sorts array of n values.
- */
-void sort(int values[], int n)
-{
-    int z = n;
-    for(int i = 0 ; i < n ; i++)
-    {
-        for(int j = 0  ; j < z ; j++)
-        {
-            if(values[i] > values[i + 1])
-            {
-                int t = values[i + 1];
-                values[i + 1] = values[i];
-                values[i] = t;
-            }
-           
-        }
-        z = z - 1;
-    }
-   return;
 }
