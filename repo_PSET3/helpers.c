@@ -14,12 +14,12 @@
 /**
  * Returns true if value is in array of n values, else false.
  */
-bool search(int value, int values[], int z)
+bool search(int value, int values[], int n)
 {
-    if (z > 0)
+    if (n > 0)
     {
         int f = 0;
-        int l = z ;
+        int l = n ;
         int m = (int)(f + l)/2;
 
         while(f <= l)
@@ -38,4 +38,6 @@ bool search(int value, int values[], int z)
                 f = m + 1;
             }
         }
-    }return false;}
+    }
+    return false;
+}
