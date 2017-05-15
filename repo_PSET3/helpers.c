@@ -38,6 +38,4 @@ bool search(int value, int values[], int z)
                 f = m + 1;
             }
         }
-    }
-    return false;
-}
+    }return false;}
