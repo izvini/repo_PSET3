@@ -1,5 +1,4 @@
 /* * fifteen.c
- *
  * Computer Science 50
  * Problem Set 3
  *
