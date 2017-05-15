@@ -208,8 +208,7 @@ bool move(int tile)
             }
 
         }
-    }
-    for(int i = 0 ; i < dimen ; i++)
+    }for(int i = 0 ; i < dimen ; i++)
     {
         for(int j = 0; j < dimen; j++)
         {
