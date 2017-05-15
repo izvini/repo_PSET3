@@ -261,13 +261,8 @@ bool won(void)
             {
                 k++;
             }
-            var1++;
-        }
-
-        }
-
-
-    if (k == dimen * dimen - 1)
+            var1++;}
+        }if (k == dimen * dimen - 1)
     {
         return true;
     }else
