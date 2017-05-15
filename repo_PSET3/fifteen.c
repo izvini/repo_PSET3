@@ -1,5 +1,4 @@
-/**
- * fifteen.c
+/* * fifteen.c
  *
  * Computer Science 50
  * Problem Set 3
@@ -14,7 +13,7 @@
  * Note that usleep is obsolete, but it offers more granularity than
  * sleep and is simpler to use than nanosleep; `man usleep` for more.
  */
- 
+
 #define _XOPEN_SOURCE 500
 
 #include <cs50.h>
@@ -106,7 +105,7 @@ int main(int argc, string argv[])
         // prompt for move
         printf("Tile to move: ");
         int tile = GetInt();
-        
+
         // quit if user inputs 0 (for testing)
         if (tile == 0)
         {
@@ -127,7 +126,7 @@ int main(int argc, string argv[])
         // sleep thread for animation's sake
         usleep(500000);
     }
-    
+
     // close log
     fclose(file);
 
@@ -156,11 +155,11 @@ void greet(void)
 
 /**
  * Initializes the game's board with tiles numbered 1 through d*d - 1
- * (i.e., fills 2D array with values but does not actually print them).  
+ * (i.e., fills 2D array with values but does not actually print them).
  */
 void init(void)
 {
-    
+
     int var = dimen * dimen - 1 ;
     for(int i = 0; i < dimen ; i++)
     {
@@ -176,7 +175,7 @@ void init(void)
         board[dimen - 1][dimen - 2] = board[dimen - 1][dimen - 3];
         board[dimen - 1][dimen - 3] = t;
     }
-        
+
 }
 
 /**
@@ -197,11 +196,11 @@ void draw(void)
 
 /**
  * If tile borders empty space, moves tile and returns true, else
- * returns false. 
+ * returns false.
  */
 bool move(int tile)
 {
-   
+
     int x = 0, y = 0, atile = 0, btile = 0;
     for(int i = 0 ; i < dimen ; i++)
     {
@@ -212,7 +211,7 @@ bool move(int tile)
                 x = i;
                 y = j;
             }
-            
+
         }
     }
     for(int i = 0 ; i < dimen ; i++)
@@ -233,7 +232,7 @@ bool move(int tile)
         board[x][y] = board[atile][btile];
         board[atile][btile] = t;
         return true;
-    }  
+    }
     else if(atile == x && (btile == y - 1 || btile == y + 1))
     {
         int t = board[x][y];
@@ -241,15 +240,15 @@ bool move(int tile)
         board[atile][btile] = t;
         return true;
     }
-        
+
     else
     {
         return false;
-    } 
+    }
 }
 
 /**
- * Returns true if game is won (i.e., board is in winning configuration), 
+ * Returns true if game is won (i.e., board is in winning configuration),
  * else false.
  */
 bool won(void)
@@ -266,17 +265,14 @@ bool won(void)
             }
             var1++;
         }
-        
+
         }
 
-    
+
     if (k == dimen * dimen - 1)
     {
         return true;
-    }
-    else
+    }else
     {
         return false;
-    }
-}
-
+    }}
