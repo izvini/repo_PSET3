@@ -240,3 +240,27 @@ bool move(int tile)
         return false;
     }
 }
+/**
+ * Returns true if game is won (i.e., board is in winning configuration),
+ * else false.
+ */
+bool won(void)
+{
+    int var1 = 1;
+    int k = 0;
+    for(int i = 0; i < dimen ;i++)
+    {
+        for(int j = 0; j < dimen ; j++)
+        {
+            if (board[i][j] == var1 )
+            {
+                k++;
+            }
+            var1++;}
+        }if (k == dimen * dimen - 1)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }}
