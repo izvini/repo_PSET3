@@ -38,8 +38,6 @@ void init(void);
 void draw(void);
 bool move(int tile);
 bool won(void);
-
-
 int main(int argc, string argv[])
 {
     // ensure proper usage
